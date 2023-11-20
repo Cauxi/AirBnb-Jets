@@ -1,0 +1,11 @@
+<%= link_to "My jets", jets_path %>
+<%= link_to "New jet", new_jet_booking_path %>
+
+  <div class="container">
+    <h1><%= @jet.name %></h1>
+    <h3><%= @jet.description %></h3>
+    <h3><%= @jet.price %></h3>
+  </div>
+  <% @jet.bookings.each do |booking| %>
+    <h2><%= booking.status %> - <%= booking.start_date %> - <%= booking.end_date %></h2>
+  <% end %>
