@@ -1,6 +1,6 @@
 <%= link_to "My jets", jets_path %>
 
   <% @jets.each do |jet| %>
-       <%= link_to jet.name, jet_path(jet) %>
+    <%= link_to jet.name, jet_path(jet) %>
+    <%= link_to "All bookings", jet_bookings_path(jet) %>
   <% end %>
-
