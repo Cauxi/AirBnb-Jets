@@ -4,6 +4,5 @@
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.association :jet, include_blank: false, include_hidden: false%>
-  <%= f.association :user, include_blank: false, include_hidden: false%>
   <%= f.submit "Submit booking", class: "btn btn-dark" %>
 <% end %>
