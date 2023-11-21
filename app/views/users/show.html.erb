@@ -1,0 +1,26 @@
+<h1>Dashboard</h1>
+ <% @jets.each do |jet| %>
+    <%= jet.name%>
+  <% end %>
+
+
+<%= current_user.first_name %>
+<br>
+<% @bookings.each do |booking| %>
+  <%= booking.status%>
+  <%= booking.jet.name %>
+  <%= booking.user.first_name %>
+<% end %>
+<br>
+
+<%= link_to "New jet", new_jet_path %>
+
+
+<% @jets.each do |jet| %>
+  <% jet.bookings.each do |booking| %>
+  <%= booking.status %>
+  <%= booking.user.first_name %>
+  <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %>
+  <%= link_to "Reject", reject_path(booking), data: {turbo_method: :patch} %>
+  <% end %>
+<% end %>

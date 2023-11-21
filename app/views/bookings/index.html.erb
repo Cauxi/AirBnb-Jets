@@ -1,0 +1,11 @@
+<%= link_to "My bookings", jet_bookings_path %>
+
+  <% @bookings.each do |booking| %>
+    <ul>
+      <li>
+        <%= booking.status%>
+        <%= booking.jet.name %>
+        <%= booking.user.first_name %>
+      </li>
+    </ul>
+  <% end %>
