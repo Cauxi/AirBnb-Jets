@@ -1,0 +1,6 @@
+<%= link_to "My jets", jets_path %>
+
+  <% @jets.each do |jet| %>
+       <%= link_to jet.name, jet_path(jet) %>
+  <% end %>
+

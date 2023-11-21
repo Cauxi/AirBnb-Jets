@@ -4,9 +4,11 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
   end
+
   def new
     @booking = Booking.new
   end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.jet = @jet
@@ -23,7 +25,6 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to bookings_path
   end
-​
   def reject
     @booking = Booking.find(params[:id])
     @booking.status = "rejected"
@@ -32,12 +33,12 @@ class BookingsController < ApplicationController
   end
 
   private
+
   def set_jet
     @jet = Jet.find(params[:jet_id])
   end
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date, :jet_id)
+    params.require(:booking).permit(:status, :start_date, :end_date, :jet_id, :user_id)
   end
-
 end
