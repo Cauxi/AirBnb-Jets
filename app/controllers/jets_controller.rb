@@ -26,6 +26,6 @@ class JetsController < ApplicationController
     @jet = Jet.find(params[:id])
   end
   def jet_params
-    params.require(:jet).permit(:name, :description, :price)
+    params.require(:jet).permit(:name, :description, :price, :user_id)
   end
 end

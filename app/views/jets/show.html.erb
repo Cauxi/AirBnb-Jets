@@ -1,0 +1,12 @@
+<%= link_to "All jets", jets_path %>
+
+<h1><%= @jet.name %></h1>
+<h1><%= @jet.description %></h1>
+<h1><%= @jet.price %></h1>
+
+<% @jet.bookings.each do |booking| %>
+        <h2><%= booking.jet.name%> - <%= booking.user.first_name %></h2>
+  <% end %>
+
+<%= link_to "Create a new booking",   new_jet_booking_path(@jet) %>
+
