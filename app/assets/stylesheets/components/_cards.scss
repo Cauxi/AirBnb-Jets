@@ -1,0 +1,96 @@
+.cards a {
+  text-decoration: none;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  height: 350px;
+  margin-top: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px white;
+}
+
+.card-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-category {
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+.card-trip > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.creation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+.creation a {
+  text-decoration: none;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 15px 25px;
+  background-color: rgb(161, 16, 16);
+  border-radius: 5px;
+}
+
+.creation a:hover {
+  background-color: rgb(234, 128, 128);
+}
