@@ -6,6 +6,7 @@ class JetsController < ApplicationController
   end
 
   def show
+    @marker = { lat: @jet.latitude, lng: @jet.longitude }
   end
 
   def new
@@ -27,6 +28,6 @@ class JetsController < ApplicationController
     @jet = Jet.find(params[:id])
   end
   def jet_params
-    params.require(:jet).permit(:name, :description, :price, :user_id, :photo)
+    params.require(:jet).permit(:name, :description, :price, :user_id, :photo, :city)
   end
 end
