@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+.button {
+  background-color: rgb(189, 185, 185);
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 1px 1px 3px rgb(45, 43, 43);
+  color: rgb(37, 35, 35);
+  text-decoration: none;
+  font-family: cursive;
+  font-size: 30px;
+}
+.home-image {
+  height: 100vh;
+  width: 500px;
+  object-fit: cover;
+  box-shadow: 2px 2px 2px 4px rgb(195, 190, 190);
+
+
+}
+h1 {
+  font-family: cursive;
+  font-size: 200px;
+  text-shadow: 3px 3px rgb(195, 190, 190);
+
+}
+.nav-link {
+  font-family: cursive;
+  font-size: 2  5px;
+}

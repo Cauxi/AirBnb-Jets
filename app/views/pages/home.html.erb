@@ -1,4 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= link_to "All jets", jets_path %>
+<div class="container d-flex">
+  <div class="home-image-container">
+    <%= image_tag("jet2.jpg", class:"home-image") %>
+  </div>
+  <div class="container d-flex">
+  <div class="home-content-container">
+    <h1>Fly With Us</h1>
+    <%= link_to "All Jets", jets_path, class: "button" %>
+    </div>
+  </div>
+</div>
