@@ -1,7 +1,13 @@
 <h1>New booking</h1>
 
 <%= simple_form_for [@jet, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+
+  <%= f.input :start_date,
+              label: 'Booking Date',
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+  <%# <%= f.input :end_date,as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+
   <%= f.submit "Submit booking", class: "btn btn-dark" %>
 <% end %>
