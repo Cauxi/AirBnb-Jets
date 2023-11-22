@@ -25,7 +25,7 @@
 <h2>Check the status of your bookings</h2>
 <% @bookings.each do |booking| %>
   <ul>
-    <li>Your booking with <%= booking.jet.name %>, from  <%= booking.start_date %> to <%= booking.end_date %> is: <%= booking.status%></li>
+    <li>Your booking with <%= booking.jet.name %>, from  <%= booking.start_date %> to <%= booking.end_date %> is: <%= booking.status%>. The total price is: <%= (booking.end_date - booking.start_date).to_i * booking.jet.price %>.</li>
   </ul>
 <% end %>
 
@@ -34,7 +34,7 @@
 <% @jets.each do |jet| %>
   <% jet.bookings.each do |booking| %>
   <ul>
-    <li><%= booking.user.first_name %> wants to rent your <%= booking.jet.name %> from <%= booking.start_date %> to <%= booking.end_date %>. Current status from this booking: <%= booking.status %>.</li>
+    <li><%= booking.user.first_name %> wants to rent your <%= booking.jet.name %> from <%= booking.start_date %> to <%= booking.end_date %>. The total price is: <%= (booking.end_date - booking.start_date).to_i * jet.price %>. Current status from this booking: <%= booking.status %>.</li>
     <% if booking.status == "pending" %>
       <li>You want to: <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %> or <%= link_to "Reject", reject_path(booking), data: {turbo_method: :patch} %> ?</li>
     <% else %>
