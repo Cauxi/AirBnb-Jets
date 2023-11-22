@@ -1,26 +1,29 @@
-<h1>Dashboard</h1>
+<h1>Welcome <%= current_user.first_name %> to your Dashboard</h1>
+
+<h2>Your jets are ready to be rented</h2>
  <% @jets.each do |jet| %>
-    <%= jet.name%>
+    <ul>
+        <li><%= jet.name%></li>
+    </ul>
   <% end %>
 
+<h2>You want to put a new jet to rent?</h2>
+  <%= link_to "New jet", new_jet_path %>
 
-<%= current_user.first_name %>
-<br>
+
+<h2>Check the status of your bookings</h2>
 <% @bookings.each do |booking| %>
-  <%= booking.status%>
-  <%= booking.jet.name %>
-  <%= booking.user.first_name %>
+  <ul>
+    <li>Your booking with <%= booking.jet.name %>, from  <%= booking.start_date %> to <%= booking.end_date %> is: <%= booking.status%></li>
+  </ul>
 <% end %>
-<br>
-
-<%= link_to "New jet", new_jet_path %>
 
 
+<h2>Manage the bookings to your jets</h2>
 <% @jets.each do |jet| %>
   <% jet.bookings.each do |booking| %>
-  <%= booking.status %>
-  <%= booking.user.first_name %>
-  <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %>
-  <%= link_to "Reject", reject_path(booking), data: {turbo_method: :patch} %>
+  <ul>
+    <li><%= booking.user.first_name %> wants to rent your <%= booking.jet.name %> from <%= booking.start_date %> to <%= booking.end_date %>. Current status from this booking: <%= booking.status %>. You want to: <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %> or <%= link_to "Reject", reject_path(booking), data: {turbo_method: :patch} %> ?</li>
+  </ul>
   <% end %>
 <% end %>
