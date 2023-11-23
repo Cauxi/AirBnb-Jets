@@ -24,7 +24,7 @@
         <div class="card-booking">
             <h5><%= booking.user.first_name %> <%= booking.user.last_name %></h5>
             <h6>Wants to rent your <%= booking.jet.name %></h6>
-            <p>From <%= booking.start_date %> to <%= booking.end_date %>. The total price is: <%= (booking.end_date - booking.start_date).to_i * jet.price %>€. Current status from this booking: <%= booking.status %>.</p>
+            <p>From <%= booking.start_date.strftime('%d/%m/%Y') %> to <%= booking.end_date.strftime('%d/%m/%Y') %>. The total price is: <%= (booking.end_date - booking.start_date).to_i * jet.price %>€. Current status from this booking: <%= booking.status %>.</p>
             <% if booking.status == "pending" %>
               <p> You want to: <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %> or <%= link_to "Reject", reject_path(booking), data: {turbo_method: :patch} %> ?</p>
              <% else %>
@@ -38,7 +38,7 @@
   <% @bookings.each do |booking| %>
     <div class="card-booking">
       <ul>
-        <p>Your booking with <%= booking.jet.name %>, from  <%= booking.start_date %> to <%= booking.end_date %> is: <%= booking.status%>.</p>
+        <p>Your booking with <%= booking.jet.name %>, from  <%= booking.start_date.strftime('%d/%m/%Y') %> to <%= booking.end_date.strftime('%d/%m/%Y') %> is: <%= booking.status%>.</p>
         <p>The total price is: <%= (booking.end_date - booking.start_date).to_i * booking.jet.price %>€.</p>
       </ul>
     </div>
