@@ -4,11 +4,13 @@ class JetsController < ApplicationController
   def index
     @jets = Jet.all
     count = 0
-
     current_user.jets.each do |jet|
       count += jet.bookings.count { |booking| booking.status == "pending" }
     end
     @bookings_pending = count
+    if params[:query].present?
+      @jets = @jets.where("city ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
