@@ -21,14 +21,14 @@
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
   <div data-controller="toggle" class="mt-5">
-   <button data-action="click->toggle#booking" class="btn btn-primary">Create a Booking</button>
+   <button data-action="click->toggle#booking" class="btn btn-primary">New Booking</button>
     <div data-toggle-target="button" class="d-none mt-2">
       <%= simple_form_for [@jet, @booking] do |f| %>
         <%= f.input :start_date,
                     label: 'Booking Date',
                     as: :string,
                     input_html: { data: { controller: "datepicker" } } %>
-        <%= f.submit "Submit booking", class: "btn btn-dark" %>
+        <%= f.submit "Book", class: "btn btn-dark" %>
       <% end %>
   </div>
 </div>
