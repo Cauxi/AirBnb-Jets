@@ -24,16 +24,14 @@
   color: white;
   font-weight: bold;
   font-size: 25px;
-  text-shadow: 1px 1px 1px white;
+  text-shadow: 1px 1px 1px white
 }
 
 .card-category {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.card-category {
+  height: 150px;
   background-repeat:no-repeat;
   background-position: center;
   background-size: cover;
@@ -65,7 +63,6 @@
   opacity: .7;
   margin: 0;
 }
-
 
 .card-trip .card-trip-infos {
   padding: 16px;
