@@ -9,7 +9,7 @@ class JetsController < ApplicationController
     end
     @bookings_pending = count
     if params[:query].present?
-      sql_subquery = "city ILIKE :query OR country ILIKE :query"
+      sql_subquery = "city @@ :query OR country @@ :query"
       @jets = @jets.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
