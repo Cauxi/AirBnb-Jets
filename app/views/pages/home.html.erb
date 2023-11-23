@@ -1,11 +1,9 @@
-<div class="container d-flex">
-  <div class="home-image-container">
+<div class="main w-100 m-0 d-flex" style= "background-color: grey">
+  <div class="main-image">
     <%= image_tag("jet2.jpg", class:"home-image") %>
   </div>
-  <div class="container d-flex">
-  <div class="home-content-container">
-    <h1>Fly With Us</h1>
-    <%= link_to "All Jets", jets_path, class: "button" %>
-    </div>
+  <div class="main-info" >
+    <h1 class= "ms-5">Fly With Us</h1>
+    <%= link_to "All Jets", jets_path, class: "button ms-5" %>
   </div>
 </div>
