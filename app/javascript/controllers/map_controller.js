@@ -12,22 +12,22 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/cauxi/clpb4yd0b007001pk95t9324k"
     });
     this.#addMarkerToMap();
-    this.#fitMapToMarkers()
+    this.#fitMapToMarkers();
   }
 
   #addMarkerToMap() {
-    console.log(this.map);
       new mapboxgl.Marker()
         .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
         .addTo(this.map);
   }
 
   #fitMapToMarkers() {
-    const bounds = new mapboxgl.LngLatBounds()
-    this.markerValue.bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 10, duration: 0 })
-  }
+    this.map.fitBounds([
+      [this.markerValue.lng, this.markerValue.lat],
+      [this.markerValue.lng, this.markerValue.lat]],
+      { padding: 70, maxZoom: 5, duration: 0 });
+    }
 }
