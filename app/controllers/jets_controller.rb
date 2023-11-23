@@ -3,6 +3,12 @@ class JetsController < ApplicationController
 
   def index
     @jets = Jet.all
+    count = 0
+
+    current_user.jets.each do |jet|
+      count += jet.bookings.count { |booking| booking.status == "pending" }
+    end
+    @bookings_pending = count
   end
 
   def show
