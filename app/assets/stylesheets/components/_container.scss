@@ -1,7 +1,15 @@
-.container-show{
- display: flex;
- align-items: center;
- justify-content: space-between;
-  height: 100vh;
-  margin: 50px, auto;
+.container-dash {
+  margin: 100 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1-dash {
+  font-size: 50px;
+  font-weight: bold;
+  color: black;
+  opacity: 0.7;
+  text-shadow: 0px 0px 0px;
 }
