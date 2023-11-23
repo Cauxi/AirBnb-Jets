@@ -1,25 +1,15 @@
-<div class="container d-flex">
-  <div class="home-image-container">
-    <%= image_tag("jet2.jpg", class:"home-image") %>
-  </div>
-  <div class="container d-flex">
-  <div class="home-content-container">
-    <h1>Fly With Us</h1>
-    <%= link_to "All Jets", jets_path, class: "button" %>
+  <div class="main w-100 m-0 d-flex">
+    <div class="main-image">
+      <%= image_tag("jet2.jpg", class:"home-image") %>
 
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: jets_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", city: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
 
     </div>
+    <div class="main-info area" >
+      <h1 id="margin" class= "ms-5">Fly</h1>
+      <h1 class="ms-5">With</h1>
+      <h1 class="ms-5">Style</h1>
+      <div class="height">
+      <%= link_to "Get Start", jets_path, class: "button ms-5" %>
+      </div>
+      </div>
   </div>
-</div>
