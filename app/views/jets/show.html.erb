@@ -1,9 +1,4 @@
-<div class="creation">
-<%= link_to "All jets", jets_path %>
-</div>
-
-<div class="container">
-  <div class="row">
+<div class="container-show">
     <div class="card-trip">
       <% if @jet.photo.attached? %>
         <img src= <%= cl_image_path @jet.photo.key, height: 300, crop: :fill %> />
@@ -25,7 +20,6 @@
         data-map-marker-value="<%= @marker.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-  </div>
 </div>
 
   <div class="creation">

@@ -28,6 +28,6 @@ export default class extends Controller {
     this.map.fitBounds([
       [this.markerValue.lng, this.markerValue.lat],
       [this.markerValue.lng, this.markerValue.lat]],
-      { padding: 70, maxZoom: 5, duration: 0 });
+      { padding: 70, maxZoom: 7, duration: 0 });
     }
 }
