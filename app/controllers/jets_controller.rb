@@ -3,6 +3,9 @@ class JetsController < ApplicationController
 
   def index
     @jets = Jet.all
+    if params[:query].present?
+      @jets = @jets.where(city: params[:query])
+    end
   end
 
   def show
