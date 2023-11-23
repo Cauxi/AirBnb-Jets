@@ -1,9 +1,14 @@
-<div class="main w-100 m-0 d-flex" style= "background-color: grey">
-  <div class="main-image">
-    <%= image_tag("jet2.jpg", class:"home-image") %>
+
+  <div class="main w-100 m-0 d-flex">
+    <div class="main-image">
+      <%= image_tag("jet2.jpg", class:"home-image") %>
+    </div>
+    <div class="main-info area" >
+      <h1 id="margin" class= "ms-5">Fly</h1>
+      <h1 class="ms-5">With</h1>
+      <h1 class="ms-5">Style</h1>
+      <div class="height">
+      <%= link_to "Get Start", jets_path, class: "button ms-5" %>
+      </div>
+      </div>
   </div>
-  <div class="main-info" >
-    <h1 class= "ms-5">Fly With Us</h1>
-    <%= link_to "All Jets", jets_path, class: "button ms-5" %>
-  </div>
-</div>

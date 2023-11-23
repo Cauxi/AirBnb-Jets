@@ -1,25 +1,45 @@
 // Specific CSS for your home-page
 .button {
-  background-color: rgb(189, 185, 185);
-  border-radius: 5px 5px 5px 5px;
-  box-shadow: 1px 1px 3px rgb(45, 43, 43);
+  background-color: #e0dede;
+  border-radius: 10px 10px 10px 10px;
   color: rgb(37, 35, 35);
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
+  padding: 10px 250px;
+  margin-top: 20px;
 }
 .home-image {
-  height: 100vh;
+  height: 111vh;
   width: 500px;
   object-fit: cover;
-  background-color: rgb(39, 38, 38);
 }
 h1 {
+  background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
   font-family: Arial, Helvetica, sans-serif;
-  text-shadow: 3px 3px rgb(195, 190, 190);
-  font-size: 100px;
+  position: relative;
+  font-size: 7vw;
+  font-weight: 200;
 
 }
+
+h1:after {
+  background: none;
+  content: attr(data-heading);
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  text-shadow:
+  -1px 0 1px #c6bb9f,
+  0 1px 1px #c6bb9f,
+  5px 5px 10px rgba(0, 0, 0, 0.4),
+  -5px -5px 10px rgba(0, 0, 0, 0.4);
+}
+
 .nav-link {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2  5px;
@@ -32,10 +52,25 @@ h1 {
 .container {
   margin: 0;
   padding: 0;
-  background-color: rgb(39, 38, 38);
 }
 .home-container {
-  background-color: rgb(39, 38, 38);
   width: 100% !important;
 
+}
+.main {
+  background-color: rgb(35, 32, 32);
+}
+.area {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  text-align: center;
+  padding: 20px;
+}
+.height {
+  margin-top: 70px;
+}
+
+#margin {
+  margin-top: 60px;
 }
