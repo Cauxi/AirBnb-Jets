@@ -9,7 +9,8 @@ class JetsController < ApplicationController
     end
     @bookings_pending = count
     if params[:query].present?
-      @jets = @jets.where("city ILIKE ?", "%#{params[:query]}%")
+      sql_subquery = "city ILIKE :query OR country ILIKE :query"
+      @jets = @jets.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
@@ -36,6 +37,6 @@ class JetsController < ApplicationController
     @jet = Jet.find(params[:id])
   end
   def jet_params
-    params.require(:jet).permit(:name, :description, :price, :user_id, :photo, :city)
+    params.require(:jet).permit(:name, :description, :price, :user_id, :photo, :city, :country)
   end
 end
