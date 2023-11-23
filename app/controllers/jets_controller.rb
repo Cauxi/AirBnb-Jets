@@ -3,10 +3,20 @@ class JetsController < ApplicationController
 
   def index
     @jets = Jet.all
+    count = 0
+    current_user.jets.each do |jet|
+      count += jet.bookings.count { |booking| booking.status == "pending" }
+    end
+    @bookings_pending = count
+    if params[:query].present?
+      sql_subquery = "city @@ :query OR country @@ :query"
+      @jets = @jets.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def show
     @marker = { lat: @jet.latitude, lng: @jet.longitude }
+    @booking = Booking.new
   end
 
   def new
@@ -28,6 +38,6 @@ class JetsController < ApplicationController
     @jet = Jet.find(params[:id])
   end
   def jet_params
-    params.require(:jet).permit(:name, :description, :price, :user_id, :photo, :city)
+    params.require(:jet).permit(:name, :description, :price, :user_id, :photo, :city, :country)
   end
 end
