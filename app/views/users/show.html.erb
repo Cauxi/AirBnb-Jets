@@ -39,7 +39,7 @@
       <% if booking.status == "pending" %>
         <li>You want to: <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %> or <%= link_to "Reject", reject_path(booking), data: {turbo_method: :patch} %> ?</li>
       <% else %>
-        <li>The requester will be notified about your decision. </li>
+        <li>The requester will receive an email about your decision. </li>
       <% end %>
     </ul>
     <% end %>
