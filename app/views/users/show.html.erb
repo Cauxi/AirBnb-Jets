@@ -14,12 +14,6 @@
     </div>
   <% end %>
 
-
-  <h2 class="h2-dash" >Interested In Leasing Out Your Jet?</h2>
-  <div class="creation">
-    <%= link_to "Add a Jet", new_jet_path %>
-  </div>
-
   <h2 class="h2-dash">Manage The Bookings Of Your Jets:</h2>
     <% @jets.each do |jet| %>
       <% jet.bookings.each do |booking| %>
@@ -45,4 +39,9 @@
       </ul>
     </div>
   <% end %>
+
+   <h2 class="h2-dash" >Interested In Leasing Out Your Jet?</h2>
+  <div class="creation">
+    <%= link_to "Add a Jet", new_jet_path %>
+  </div>
 </div>
