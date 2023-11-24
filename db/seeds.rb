@@ -7,6 +7,7 @@ file5= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700753428/k
 file6= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700753440/kjhsdaiow3lzokoujoq3.jpg")
 file7= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700755648/uaypfituhpzy4cdwgjap.jpg")
 file8= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700755661/ryqotyuvdyk50uhqofll.jpg")
+file9= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700821853/development/ppltv5ek14dtdd0vx9p036ijjz4y.jpg")
 puts "Cleaning database..."
 Booking.destroy_all
 Jet.destroy_all
@@ -42,4 +43,7 @@ jet7.save
 jet8 = Jet.new(name: "Bombardier Global 7500", description: "Engineered for total performance and featuring an industry leading 7,700 nm range, no other business jet offers the Global 7500 aircraft's ultimate combination of confort and style", price: 50000, user: User.last, city: "Dubai", country: "UAE");
 jet8.photo.attach(io: file8, filename: 'ryqotyuvdyk50uhqofll', content_type: 'image/jpg')
 jet8.save
+jet9 = Jet.new(name: "AirBus A380", description: "The Emirates Executive private jet your private jet service from Emirates. A luxury interior and a service tailored to you will make your flights the ultimate in exclusive travel.", price: 1000000, user: User.first, city: "Abu Dhabi", country: "UAE");
+jet9.photo.attach(io: file9, filename: 'ppltv5ek14dtdd0vx9p036ijjz4y', content_type: 'image/jpg')
+jet9.save
 puts "Finished!"
