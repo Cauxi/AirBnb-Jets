@@ -3,15 +3,23 @@ puts "Cleaning database..."
 Booking.destroy_all
 Jet.destroy_all
 User.destroy_all
-
+puts "jet1"
 file1 = URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700654226/development/rapnsgxnvxj3bq03trlmec541s1o.jpg")
+puts "jet2"
 file2= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700662716/dsxuniiv8jyyetbrmbvl.jpg")
+puts "jet3"
 file3= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700826102/ems8dskokgahc4jqwb5g.jpg")
+puts "jet4"
 file4= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700752860/verpbtyvbzvoenwj9ik5.jpg")
+puts "jet5"
 file5= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700753428/kqxxkpqidhzwvl5mth41.jpg")
+puts "jet6"
 file6= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700753440/kjhsdaiow3lzokoujoq3.jpg")
+puts "jet7"
 file7= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700755648/uaypfituhpzy4cdwgjap.jpg")
+puts "jet8"
 file8= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700755661/ryqotyuvdyk50uhqofll.jpg")
+puts "jet9"
 file9= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700826039/development/1tl6n7muito4049l55rc6x0qqgwa.jpg")
 
 puts "Creating users"
