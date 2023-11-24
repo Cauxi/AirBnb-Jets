@@ -10,6 +10,7 @@
             <h2><%= @jet.name %></h2>
             <p><%= @jet.description %></p>
             <p><%= @jet.country %> - <%= @jet.city %></p>
+            <p>Owned by: <%= @jet.user.first_name %> <%= @jet.user.last_name %></p>
           </div>
           <h2 class="card-trip-pricing"> <%= @jet.price.to_s.reverse.scan(/\d{1,3}/).join(",").reverse  %>€/day</h2>
     </div>
