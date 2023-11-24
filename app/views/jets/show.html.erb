@@ -11,25 +11,25 @@
             <p><%= @jet.description %></p>
             <p><%= @jet.city %></p>
           </div>
-          <h2 class="card-trip-pricing"><%= @jet.price %>€/day</h2>
+          <h2 class="card-trip-pricing"> <%= @jet.price.to_s.reverse.scan(/\d{1,3}/).join(",").reverse  %>€/day</h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-    </div>
-      <div style="width: 70%; height: 502px;"
-        data-controller="map"
-        data-map-marker-value="<%= @marker.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+  </div>
+  <div style="width: 70%; height: 502px;"
+    data-controller="map"
+    data-map-marker-value="<%= @marker.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
   <div data-controller="toggle" class="mt-5">
-   <button data-action="click->toggle#booking" class="btn btn-primary">New Booking</button>
+   <button data-action="click->toggle#booking" class="btn btn-dark">New Booking</button>
     <div data-toggle-target="button" class="d-none mt-2">
       <%= simple_form_for [@jet, @booking] do |f| %>
         <%= f.input :start_date,
                     label: 'Booking Date',
                     as: :string,
                     input_html: { data: { controller: "datepicker" } } %>
-        <%= f.submit "Book", class: "btn btn-dark" %>
+        <%= f.submit "Book", class: "btn btn-secondary" %>
       <% end %>
+    </div>
   </div>
-</div>
 </div>
