@@ -22,6 +22,7 @@
         <%= link_to jet_path(jet) do %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path jet.photo.key, height: 300, crop: :fill %>')">
               <%= jet.name %>
+              <div class="city-location"><i class="fa-solid fa-location-dot" style="color: #f4f4f4;"></i> <%= jet.city %></div>
             </div>
         <% end %>
     <% end %>
