@@ -1,45 +1,47 @@
 <div class="container-dash">
   <h1 class="h1-dash">Welcome <%= current_user.first_name %> to your Dashboard</h1>
 
-  <h2>All your available jets</h2>
+  <h2 class="h2-dash">All your available jets</h2>
   <% unless @jets.empty? %>
-    <div class="cards">
+    <div class="cards-show">
       <% @jets.each do |jet| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path jet.photo.key, height: 300, crop: :fill %>')">
-          <%= jet.name %>
-        </div>
+        <%= link_to jet_path(jet) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path jet.photo.key, height: 300, crop: :fill %>')">
+            <%= jet.name %>
+          </div>
+         <% end %>
       <% end %>
     </div>
   <% end %>
 
 
-  <h2>Do you want to put a new jet to rent?</h2>
+  <h2 class="h2-dash" >Do you want to put a new jet to rent?</h2>
   <div class="creation">
     <%= link_to "New jet", new_jet_path %>
   </div>
 
-  <h2>Manage the bookings to your jets</h2>
+  <h2 class="h2-dash">Manage the bookings to your jets</h2>
     <% @jets.each do |jet| %>
       <% jet.bookings.each do |booking| %>
         <div class="card-booking">
-            <h5><%= booking.user.first_name %> <%= booking.user.last_name %></h5>
+            <h5><i class="fa-solid fa-user" style="color: #494949;"></i> <%= booking.user.first_name %> <%= booking.user.last_name %></h5>
             <h6>Wants to rent your <%= booking.jet.name %></h6>
-            <p>From <%= booking.start_date.strftime('%d/%m/%Y') %> to <%= booking.end_date.strftime('%d/%m/%Y') %>. The total price is: <%= (booking.end_date - booking.start_date).to_i * jet.price %>€. Current status from this booking: <%= booking.status %>.</p>
+            <p>From <%= booking.start_date.strftime('%d/%m/%Y') %> to <%= booking.end_date.strftime('%d/%m/%Y') %>. The total price is: <%= ((booking.end_date - booking.start_date).to_i * jet.price).to_s.reverse.scan(/\d{1,3}/).join(",").reverse %>€. Current status from this booking: <strong><%= booking.status %></strong>.</p>
             <% if booking.status == "pending" %>
               <p> You want to: <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %> or <%= link_to "Reject", reject_path(booking), data: {turbo_method: :patch} %> ?</p>
              <% else %>
-              <p>The requester will receive an email about your decision. </p>
+              <p><i class="fa-solid fa-envelope-circle-check" style="color: #494949;"></i> The requester will receive an email about your decision. </p>
             <% end %>
         </div>
       <% end %>
     <% end %>
 
-  <h2>Check the status of your next flights</h2>
+  <h2 class="h2-dash">Check the status of your next flights</h2>
   <% @bookings.each do |booking| %>
-    <div class="card-booking">
+    <div class="card-booking-mine">
       <ul>
-        <p>Your booking with <%= booking.jet.name %>, from  <%= booking.start_date.strftime('%d/%m/%Y') %> to <%= booking.end_date.strftime('%d/%m/%Y') %> is: <%= booking.status%>.</p>
-        <p>The total price is: <%= (booking.end_date - booking.start_date).to_i * booking.jet.price %>€.</p>
+        <p><i class="fa-solid fa-calendar-check" style="color: #494949;"></i> Your booking with <%= booking.jet.name %>, from  <%= booking.start_date.strftime('%d/%m/%Y') %> to <%= booking.end_date.strftime('%d/%m/%Y') %> is: <strong><%= booking.status %></strong>.</p>
+        <p>The total price is: <%= ((booking.end_date - booking.start_date).to_i * booking.jet.price).to_s.reverse.scan(/\d{1,3}/).join(",").reverse %>€.</p>
       </ul>
     </div>
   <% end %>
