@@ -1,7 +1,7 @@
 <div class="container-dash">
-  <h1 class="h1-dash">Welcome <%= current_user.first_name %> to your Dashboard</h1>
+  <h1 class="h1-dash">Welcome <%= current_user.first_name %> To Your Dashboard</h1>
 
-  <h2 class="h2-dash">All your available jets</h2>
+  <h2 class="h2-dash">All Of Your Available Jets</h2>
   <% unless @jets.empty? %>
     <div class="cards-show">
       <% @jets.each do |jet| %>
@@ -15,12 +15,12 @@
   <% end %>
 
 
-  <h2 class="h2-dash" >Do you want to put a new jet to rent?</h2>
+  <h2 class="h2-dash" >Interested In Leasing Out Your Jet?</h2>
   <div class="creation">
-    <%= link_to "New jet", new_jet_path %>
+    <%= link_to "Add a Jet", new_jet_path %>
   </div>
 
-  <h2 class="h2-dash">Manage the bookings to your jets</h2>
+  <h2 class="h2-dash">Manage The Bookings Of Your Jets:</h2>
     <% @jets.each do |jet| %>
       <% jet.bookings.each do |booking| %>
         <div class="card-booking">
@@ -36,11 +36,11 @@
       <% end %>
     <% end %>
 
-  <h2 class="h2-dash">Check the status of your next flights</h2>
+  <h2 class="h2-dash">Check The Status Of Your Next Flights:</h2>
   <% @bookings.each do |booking| %>
     <div class="card-booking-mine">
       <ul>
-        <p><i class="fa-solid fa-calendar-check" style="color: #494949;"></i> Your booking with <%= booking.jet.name %>, from  <%= booking.start_date.strftime('%d/%m/%Y') %> to <%= booking.end_date.strftime('%d/%m/%Y') %> is: <strong><%= booking.status %></strong>.</p>
+        <p><i class="fa-solid fa-calendar-check" style="color: #494949;"></i> Your booking of a <%= booking.jet.name %>, from  <%= booking.start_date.strftime('%d/%m/%Y') %> to <%= booking.end_date.strftime('%d/%m/%Y') %> is: <strong><%= booking.status %></strong>.</p>
         <p>The total price is: <%= ((booking.end_date - booking.start_date).to_i * booking.jet.price).to_s.reverse.scan(/\d{1,3}/).join(",").reverse %>€.</p>
       </ul>
     </div>
