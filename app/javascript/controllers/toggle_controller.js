@@ -6,7 +6,6 @@ export default class extends Controller {
   connect() {
   }
   booking(event) {
-    event.preventDefault()
     this.buttonTarget.classList.toggle("d-none");
   }
 
