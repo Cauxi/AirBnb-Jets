@@ -135,8 +135,17 @@
 
 .card-booking a {
   text-decoration: none;
-  color: black;
-  opacity: 0.7;
+  color: white;
+  padding: 10px 20px;
+  background-color:  rgb(67, 63, 63);
+  border-radius: 5px;
+}
+
+.card-booking a:hover {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  background-color: rgb(24, 24, 24);
 }
 
 .cards-show {
