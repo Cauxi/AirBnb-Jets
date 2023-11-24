@@ -18,7 +18,7 @@
 
   <div class="cards">
     <% if @jets.any? %>
-      <% @jets.each do |jet| %>
+      <% @jets.sort_by {|jet| jet.price }.each do |jet| %>
         <%= link_to jet_path(jet) do %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path jet.photo.key, height: 300, crop: :fill %>')">
               <%= jet.name %>
