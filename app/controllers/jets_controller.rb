@@ -17,10 +17,20 @@ class JetsController < ApplicationController
   def show
     @marker = { lat: @jet.latitude, lng: @jet.longitude }
     @booking = Booking.new
+    count = 0
+    current_user.jets.each do |jet|
+      count += jet.bookings.count { |booking| booking.status == "pending" }
+    end
+    @bookings_pending = count
   end
 
   def new
     @jet = Jet.new
+    count = 0
+    current_user.jets.each do |jet|
+      count += jet.bookings.count { |booking| booking.status == "pending" }
+    end
+    @bookings_pending = count
   end
 
   def create

@@ -2,14 +2,17 @@
   <h1 class="h1-index">All Available Jets</h1>
 
   <div class="row justify-content-center">
-    <div class="col-lg-12 my-3">
+    <div class="col-lg-12 my-3" data-controller="reset-form">
       <%= form_with url: jets_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Search..."
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Search...",
+                data: {reset_form_target: "text"}
           %>
-        <%= submit_tag "Where?", city: "", class: "btn btn-dark" %>
+        <%# <div data-action="click->reset-form#reset"> %>
+        <%= submit_tag "Where?", city: "", class: "btn btn-dark", data: {action: "click->reset-form#reset"} %>
+        <%# </div> %>
       <% end %>
     </div>
   </div>
