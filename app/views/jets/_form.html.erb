@@ -1,17 +1,17 @@
 <div class="container-form">
-  <h1>New jet</h1>
+  <h1 class="h1-form">New jet</h1>
 
   <%= simple_form_for(@jet) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :country , as: :string%>
-    <%= f.input :city %>
-    <%= f.input :price, label: 'Daily Price in €' %>
-    <%= f.input :photo, as: :file %>
-  </div>
-  <div class="form-actions">
-    <%= f.submit "Submit jet", class: "btn btn-dark" %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :country , as: :string%>
+      <%= f.input :city %>
+      <%= f.input :price, label: 'Daily Price in €' %>
+      <%= f.input :photo, as: :file %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "Submit jet", class: "btn btn-dark" %>
+    </div>
   <% end %>
 </div>
