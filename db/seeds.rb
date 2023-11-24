@@ -1,4 +1,9 @@
 require 'open-uri'
+puts "Cleaning database..."
+Booking.destroy_all
+Jet.destroy_all
+User.destroy_all
+
 file1 = URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700654226/development/rapnsgxnvxj3bq03trlmec541s1o.jpg")
 file2= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700662716/dsxuniiv8jyyetbrmbvl.jpg")
 file3= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700826102/ems8dskokgahc4jqwb5g.jpg")
@@ -8,10 +13,6 @@ file6= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700753440/k
 file7= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700755648/uaypfituhpzy4cdwgjap.jpg")
 file8= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700755661/ryqotyuvdyk50uhqofll.jpg")
 file9= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700826039/development/1tl6n7muito4049l55rc6x0qqgwa.jpg")
-puts "Cleaning database..."
-Booking.destroy_all
-Jet.destroy_all
-User.destroy_all
 
 puts "Creating users"
 User.create(email: "carlos@lewagon.com" , password: "123456" , first_name: "Carlos", last_name: "Coelho");
