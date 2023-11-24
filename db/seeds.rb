@@ -20,7 +20,7 @@ file7= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700755648/u
 puts "jet8"
 file8= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700755661/ryqotyuvdyk50uhqofll.jpg")
 puts "jet9"
-file9= URI.open("https://res.cloudinary.com/dvubvgrws/image/upload/v1700826039/development/1tl6n7muito4049l55rc6x0qqgwa.jpg")
+file9= URI.open("https://www.stattimes.com/statbackend/assets/uploads/original/emirates-06july2017.jpg")
 
 puts "Creating users"
 User.create(email: "carlos@lewagon.com" , password: "123456" , first_name: "Carlos", last_name: "Coelho");
